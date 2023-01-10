@@ -1,8 +1,6 @@
 # Gerenciamento de Restaurante (Treinamento Angular)
 
 ##  📋 Informações sobre o projeto: <br/>
-* Front-End foi feito com base no consumo da API em Node: https://git.gft.com/cogv/pub/-/tree/master
-
 ### Login 
         Email: arcenio@gmail.com
         Senha: arce123
