@@ -8,13 +8,6 @@
       </button>
     </div>
   </nav>
-  <p
-    class="text-center text-muted"
-    *ngIf="!listaFuncionarios.length"
-    style="font-size: 35px"
-  >
-    Desculpe não há funcionários cadastrados!
-  </p>
   <div class="card">
     <div class="card-body">
       <table class="table table-hover" *ngIf="listaFuncionarios">
@@ -82,6 +75,13 @@
           </tr>
         </tbody>
       </table>
+      <p
+        class="text-center text-muted"
+        *ngIf="!listaFuncionarios.length"
+        style="font-size: 35px"
+      >
+        Desculpe não há funcionários cadastrados!
+      </p>
     </div>
   </div>
 </div>

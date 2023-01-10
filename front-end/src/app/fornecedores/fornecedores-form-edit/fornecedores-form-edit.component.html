@@ -20,7 +20,15 @@
 
       <div class="form-group" class="mb-3">
         <label>Foto</label>
-        <input class="form-control" formControlName="foto" />
+        <input
+          type="file"
+          class="form-control"
+          formControlName="foto"
+          (change)="onFileSelect($event)"
+        />
+        <p *ngIf="tamanhoExcedido.length">{{tamanhoExcedido}}</p>
+
+        <img [src]="imagem" height="200">
       </div>
 
       <div class="form-group" class="mb-3">

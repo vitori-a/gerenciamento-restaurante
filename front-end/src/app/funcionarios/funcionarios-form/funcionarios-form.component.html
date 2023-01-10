@@ -104,18 +104,14 @@
       <div class="form-group" class="mb-3">
         <label>Foto</label>
         <input
-          placeholder="Insira a URL da foto aqui"
+          type="file"
           class="form-control"
           formControlName="foto"
+          (change)="onFileSelect($event)"
         />
-        <app-mensagem
-          *ngIf="
-          funcionarioForm.get('foto')?.errors?.['required'] &&
-          funcionarioForm.get('foto')?.touched
-          "
-          mensagem="Campo obrigatório"
-        >
-        </app-mensagem>
+        <p *ngIf="tamanhoExcedido.length">{{tamanhoExcedido}}</p>
+
+        <img [src]="imagem" height="200">
       </div>
 
       <div class="col-12">

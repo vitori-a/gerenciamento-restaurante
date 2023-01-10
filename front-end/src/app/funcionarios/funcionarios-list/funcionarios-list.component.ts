@@ -36,12 +36,7 @@ export class FuncionariosListComponent {
   }
 
   deletar(funcionarios: Funcionarios) {
-    if (confirm('Deseja realmente excluir?')) {
-      this.service
-        .remover(funcionarios._id)
-        .subscribe(() =>
-          this.router.navigate(['/inicio'], { relativeTo: this.route })
-        );
+      this.service.remover(funcionarios._id).subscribe()
+        window.location.reload();
     }
   }
-}

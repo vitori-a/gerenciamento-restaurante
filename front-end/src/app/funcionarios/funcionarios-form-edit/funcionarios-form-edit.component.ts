@@ -41,6 +41,27 @@ export class FuncionariosFormEditComponent {
     });
   }
 
+  imagem: any = '';
+  tamanhoExcedido: any = '';
+  onFileSelect(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const foto = event.target.files[0];
+
+      if (foto.size > 100000) {
+        this.tamanhoExcedido = 'Tamanho da imagem excedido (Máximo: 100KB).';
+      } else {
+        this.tamanhoExcedido = '';
+      }
+
+      var reader = new FileReader();
+      reader.onload = (event) => {
+        this.imagem = (<FileReader>event.target).result;
+        this.funcionarioForm.patchValue({ foto: this.imagem });
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
   salvar() {
     const funcionario = this.funcionarioForm.getRawValue() as Funcionarios;
     this.service.atualizar(funcionario).subscribe(
