@@ -1,0 +1,62 @@
+<app-cabecalho></app-cabecalho>
+<div class="card">
+  <div class="card-body">
+    <h4 class="text-center">Editar Cadastro de Comida</h4>
+    <form class="row g-2" [formGroup]="comidaForm">
+      <div class="form-group" class="mb-3">
+        <label>Nome</label>
+        <input
+          placeholder="Nome da Comida"
+          class="form-control"
+          formControlName="nome"
+        />
+
+        <app-mensagem
+          *ngIf="
+          comidaForm.get('nome')?.errors?.['required'] &&
+          comidaForm.get('nome')?.touched
+    "
+          mensagem="Nome obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Descrição</label>
+        <input
+          placeholder="Descrição da Comida"
+          class="form-control"
+          formControlName="descricao"
+        />
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Foto</label>
+        <input
+          placeholder="Insira a URL da foto aqui"
+          class="form-control"
+          formControlName="foto"
+        />
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Preço</label>
+        <input
+          type="number"
+          placeholder="Preço"
+          class="form-control"
+          formControlName="preco"
+        />
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary" (click)="salvar()">Editar</button>
+        {{ " " }}
+        <button class="btn btn-secondary">
+          <a [routerLink]="['/comidas']">Voltar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-rodape></app-rodape>

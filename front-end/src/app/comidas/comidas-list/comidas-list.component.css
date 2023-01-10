@@ -1,0 +1,45 @@
+.container-fluid{
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 0px;
+  padding: 0px;
+  grid-template-rows: 2fr 96fr 2fr;
+  grid-template-areas: "h h h"
+                       "a m m"
+                       "f f f"
+}
+
+.card
+{
+  font-family: 'open_sansregular';
+  border: none;
+  margin: 2em auto;
+  background-color: rgb(43, 42, 42);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.card-header{
+  opacity: 100%;
+  color: white;
+  font-size: large;
+  margin: 1em auto;
+  max-height: 600px;
+  width: 60rem;
+}
+
+a {
+  font-weight: 600;
+  font-size: 35px;
+  font-family: 'open_sansregular';
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  color:rgb(247, 247, 247);
+}
+
+p{
+  color:rgb(247, 247, 247);
+  font-family: 'open_sansregular';
+}

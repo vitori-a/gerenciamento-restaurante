@@ -1,0 +1,41 @@
+.sticky-top{
+  background: rgb(43, 42, 42);
+}
+
+a{
+  text-decoration: none;
+  font-family: "Bowlby One SC";
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 70;
+  line-height: 26.4px;
+  color:rgb(247, 247, 247);
+  margin: 0.7em;
+
+  display: block;
+  line-height: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img{
+  max-width:200px;
+  max-height:200px;
+  width: auto;
+  position: absolute;
+}
+
+ul {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  background-color: transparent;
+  color: #BAB5BD;
+  padding: 15px 20px;
+  font-size: 16px;
+}

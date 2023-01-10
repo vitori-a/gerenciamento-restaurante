@@ -1,0 +1,121 @@
+<app-cabecalho></app-cabecalho>
+<div class="card">
+  <div class="card-body">
+    <h4 class="text-center">Editar Cadastro de Usuário</h4>
+    <form class="row g-2" [formGroup]="novoUsuarioForm">
+      <div class="form-group" class="mb-3">
+        <input
+          placeholder="Nome Completo"
+          class="form-control"
+          formControlName="nome"
+        />
+
+        <app-mensagem
+          *ngIf="
+            novoUsuarioForm.get('nome')?.errors &&
+            novoUsuarioForm.get('nome')?.touched
+          "
+          mensagem="Nome incorreto"
+        >
+        </app-mensagem>
+
+        <app-mensagem
+          *ngIf="
+      novoUsuarioForm.get('nome')?.errors?.['required'] &&
+      novoUsuarioForm.get('nome')?.touched
+    "
+          mensagem="Nome obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <input placeholder="CPF" class="form-control" formControlName="cpf" />
+
+        <app-mensagem
+          *ngIf="
+      novoUsuarioForm.get('cpf')?.errors?.['required'] &&
+      novoUsuarioForm.get('cpf')?.touched
+    "
+          mensagem="CPF obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <input
+          placeholder="Telefone"
+          class="form-control"
+          formControlName="telefone"
+        />
+
+        <app-mensagem
+          *ngIf="
+      novoUsuarioForm.get('telefone')?.errors?.['required'] &&
+      novoUsuarioForm.get('telefone')?.touched
+    "
+          mensagem="Telefone obrigatória"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <input
+          placeholder="E-mail"
+          class="form-control"
+          formControlName="email"
+        />
+
+        <app-mensagem
+          *ngIf="
+        novoUsuarioForm.get('email')?.errors?.['required'] &&
+        novoUsuarioForm.get('email')?.touched
+      "
+          mensagem="E-mail obrigatório"
+        >
+        </app-mensagem>
+        <app-mensagem
+          *ngIf="
+        novoUsuarioForm.get('email')?.errors?.['email'] &&
+        novoUsuarioForm.get('email')?.touched
+      "
+          mensagem="E-mail no formato incorreto"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <input
+          type="password"
+          placeholder="Senha"
+          class="form-control"
+          formControlName="senha"
+        />
+
+        <app-mensagem
+          *ngIf="
+      novoUsuarioForm.get('senha')?.errors?.['required'] &&
+      novoUsuarioForm.get('senha')?.touched
+    "
+          mensagem="Senha obrigatória"
+        >
+        </app-mensagem>
+
+        <app-mensagem
+          *ngIf="novoUsuarioForm.errors?.['senhaIgualUsuario']"
+          mensagem="Senha deve ser diferente do usuário"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary" (click)="salvar()">Editar</button>
+        {{ " " }}
+        <button class="btn btn-secondary">
+          <a [routerLink]="['/usuarios']">Voltar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-rodape></app-rodape>

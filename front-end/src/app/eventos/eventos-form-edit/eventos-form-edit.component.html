@@ -1,0 +1,96 @@
+<app-cabecalho></app-cabecalho>
+<div class="card">
+  <div class="card-body">
+    <h4 class="text-center">Editar Cadastro de Evento</h4>
+    <form class="row g-2" [formGroup]="eventosForm">
+      <div class="form-group" class="mb-3">
+        <label for="inputPassword4" class="form-label">Nome</label>
+        <input
+          placeholder="Nome do Evento"
+          class="form-control"
+          formControlName="nome"
+        />
+
+        <app-mensagem
+          *ngIf="
+      eventosForm.get('nome')?.errors?.['required'] &&
+      eventosForm.get('nome')?.touched
+      "
+          mensagem="Nome obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="inputPassword4" class="form-label">Foto</label>
+        <input
+          placeholder="Insira a URL da foto aqui"
+          class="form-control"
+          formControlName="foto"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Data de Inicio </label>
+        <input
+          placeholder="Data de Inicio"
+          class="form-control"
+          formControlName="dataInicio"
+          [ngModel]="data | date : 'dd/MM/yyyy'"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >Data de Encerramento</label
+        >
+        <input
+          placeholder="Data de Fim"
+          class="form-control"
+          formControlName="dataFim"
+          [ngModel]="data | date : 'dd/MM/yyyy'"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >Horário de Inicio
+        </label>
+        <input
+          placeholder="00:00"
+          class="form-control"
+          formControlName="horaInicio"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >Horário de Encerramento</label
+        >
+        <input
+          placeholder="00:00"
+          class="form-control"
+          formControlName="horaFim"
+        />
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="inputPassword4" class="form-label">Descrição</label>
+        <input
+          placeholder="Descrição do evento"
+          class="form-control"
+          formControlName="descricao"
+        />
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary" (click)="salvar()">Editar</button>
+        {{ " " }}
+        <button class="btn btn-secondary">
+          <a [routerLink]="['/eventos']">Voltar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-rodape></app-rodape>

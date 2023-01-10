@@ -1,0 +1,76 @@
+<app-cabecalho></app-cabecalho>
+<div class="card">
+  <div class="card-body">
+    <h4 class="text-center">Editar Cadastro de Bebida</h4>
+    <form class="row g-2" [formGroup]="bebidasForm">
+      <div class="form-group" class="mb-3">
+        <label>Nome</label>
+        <input
+          placeholder="Nome da Bebida"
+          class="form-control"
+          formControlName="nome"
+        />
+
+        <app-mensagem
+          *ngIf="
+          bebidasForm.get('nome')?.errors?.['required'] &&
+          bebidasForm.get('nome')?.touched
+          "mensagem="Nome obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Foto</label>
+        <input
+          placeholder="Insira a URL da foto aqui"
+          class="form-control"
+          formControlName="foto"
+        />
+        <app-mensagem
+          *ngIf="
+          bebidasForm.get('foto')?.errors?.['required'] &&
+          bebidasForm.get('foto')?.touched
+          "mensagem="Foto obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Descrição</label>
+        <input
+          placeholder="Descrição da Bebida"
+          class="form-control"
+          formControlName="descricao"
+        />
+        <app-mensagem
+          *ngIf="
+          bebidasForm.get('descricao')?.errors?.['required'] &&
+          bebidasForm.get('descricao')?.touched
+          "mensagem="Descrição obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Preço</label>
+        <input
+          placeholder="Preço"
+          class="form-control"
+          type="number"
+          formControlName="preco"
+        />
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary" (click)="salvar()">Editar</button>
+        {{ " " }}
+        <button class="btn btn-secondary">
+          <a [routerLink]="['/bebidas']">Voltar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-rodape></app-rodape>
+

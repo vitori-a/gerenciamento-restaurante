@@ -1,0 +1,69 @@
+<app-cabecalho></app-cabecalho>
+<div class="card">
+  <div class="card-body">
+    <h4 class="text-center">Cadastrar Fornecedor</h4>
+
+    <form class="form mt-4" [formGroup]="fornecedoresForm">
+      <div class="form-group" class="mb-3">
+        <label>Nome</label>
+        <input
+          placeholder="Nome do Fornecedor"
+          class="form-control"
+          formControlName="nome"
+        />
+
+        <app-mensagem
+          *ngIf="
+          fornecedoresForm.get('nome')?.errors?.['required'] &&
+          fornecedoresForm.get('nome')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Foto</label>
+        <input
+          placeholder="Insira a URL da foto aqui"
+          class="form-control"
+          formControlName="foto"
+        />
+        <app-mensagem
+          *ngIf="
+          fornecedoresForm.get('foto')?.errors?.['required'] &&
+          fornecedoresForm.get('foto')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Descrição</label>
+        <input
+          placeholder="Descrição do Fornecedor"
+          class="form-control"
+          formControlName="descricao"
+        />
+        <app-mensagem
+          *ngIf="
+          fornecedoresForm.get('descricao')?.errors?.['required'] &&
+          fornecedoresForm.get('descricao')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary" (click)="salvar()">Salvar</button>
+        {{ " " }}
+        <button class="btn btn-secondary">
+          <a [routerLink]="['/fornecedores']">Voltar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-rodape></app-rodape>

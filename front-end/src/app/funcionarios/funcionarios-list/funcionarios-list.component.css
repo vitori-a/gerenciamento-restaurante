@@ -1,0 +1,49 @@
+.card-text-date-hora{
+  text-align: left;
+}
+
+.card
+{
+  background-color: rgb(43, 42, 42);
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+
+
+  max-height: 600px;
+  width: 60rem;
+}
+
+.card-header{
+  opacity: 100%;
+  color: white;
+  font-size: large;
+  margin: 1em auto;
+  max-height: 600px;
+  width: 60rem;
+}
+
+th{
+  text-align: center;
+  color: white;
+}
+
+td{
+  text-align: center;
+  color: white;
+}
+
+a {
+  font-weight: 600;
+  font-size: 25px;
+  font-family: 'open_sansregular';
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  color:rgb(247, 247, 247);
+}
+
+table{
+  overflow: auto;
+  max-height: 600px;
+}
+

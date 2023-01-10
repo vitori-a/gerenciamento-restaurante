@@ -1,0 +1,133 @@
+<app-cabecalho></app-cabecalho>
+<div class="card">
+  <div class="card-body">
+    <h4 class="text-center">Cadastrar Funcionário</h4>
+    <form class="row g-2" [formGroup]="funcionarioForm">
+      <div class="form-group" class="mb-3">
+        <label for="nome">Nome</label>
+        <input
+          placeholder="Nome Completo"
+          class="form-control"
+          formControlName="nome"
+        />
+
+        <app-mensagem
+          *ngIf="
+            funcionarioForm.get('nome')?.errors &&
+            funcionarioForm.get('nome')?.touched
+          "
+          mensagem="Nome incorreto"
+        >
+        </app-mensagem>
+
+        <app-mensagem
+          *ngIf="
+          funcionarioForm.get('nome')?.errors?.['required'] &&
+          funcionarioForm.get('nome')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="nome">Idade</label>
+        <input
+          type="number"
+          placeholder="Idade"
+          class="form-control"
+          formControlName="idade"
+        />
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="nome">Naturalidade</label>
+        <input
+          placeholder="Naturalidade"
+          class="form-control"
+          formControlName="naturalidade"
+        />
+        <app-mensagem
+          *ngIf="
+          funcionarioForm.get('naturalidade')?.errors?.['required'] &&
+          funcionarioForm.get('naturalidade')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="nome">Cargo</label>
+        <input
+          placeholder="Cargo"
+          class="form-control"
+          formControlName="cargo"
+        />
+        <app-mensagem
+          *ngIf="
+          funcionarioForm.get('cargo')?.errors?.['required'] &&
+          funcionarioForm.get('cargo')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="nome">Ano de Admissão</label>
+        <input
+          type="number"
+          placeholder="Data de Admissão"
+          class="form-control"
+          formControlName="anoAdmissao"
+        />
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label for="nome">Hobbie</label>
+        <input
+          placeholder="Hobbie"
+          class="form-control"
+          formControlName="hobbie"
+        />
+        <app-mensagem
+          *ngIf="
+          funcionarioForm.get('hobbie')?.errors?.['required'] &&
+          funcionarioForm.get('hobbie')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="form-group" class="mb-3">
+        <label>Foto</label>
+        <input
+          placeholder="Insira a URL da foto aqui"
+          class="form-control"
+          formControlName="foto"
+        />
+        <app-mensagem
+          *ngIf="
+          funcionarioForm.get('foto')?.errors?.['required'] &&
+          funcionarioForm.get('foto')?.touched
+          "
+          mensagem="Campo obrigatório"
+        >
+        </app-mensagem>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary" type="s" (click)="salvar()">
+          Salvar
+        </button>
+        {{ " " }}
+        <button class="btn btn-secondary">
+          <a [routerLink]="['/funcionarios']">Voltar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-rodape></app-rodape>
